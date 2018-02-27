@@ -1,0 +1,1 @@
+<li><a href="{{ route('register') }}"><font size=3 class="loginb">Register</font></a></li>
