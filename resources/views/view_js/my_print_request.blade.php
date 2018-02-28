@@ -6,7 +6,7 @@ $(document).ready(function(){
   //get req from api
   function getItem(){
     $.ajax({
-      url:'http://localhost/api/requests/'+{{$id}},
+      url:'/api/requests/'+{{$id}},
       //dataType: 'html',
     }).done(function(requests){
 

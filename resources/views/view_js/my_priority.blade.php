@@ -10,7 +10,7 @@ $(document).ready(function(){
     let id = $(this).data('id');
     $.ajax({
       method:'POST',
-      url:'http://localhost/api/priorities/'+id,
+      url:'/api/priorities/'+id,
       data: {_method: 'DELETE'}
     }).done(function(category){
       location.reload();
@@ -31,7 +31,7 @@ $(document).ready(function(){
   function editItem(name, id){//alert(id+' '+text+' '+body);
       $.ajax({
         method:'POST',
-        url:'http://localhost/api/priorities/'+id,
+        url:'/api/priorities/'+id,
         data: {name: name, _method: 'PUT'}
       }).done(function(priority){
         location.reload();
@@ -49,7 +49,7 @@ $(document).ready(function(){
   function addItem(name){
       $.ajax({
         method:'POST',
-        url:'http://localhost/api/priorities',
+        url:'/api/priorities',
         data: {name: name}
       }).done(function(priority){
         location.reload();
@@ -59,7 +59,7 @@ $(document).ready(function(){
   //get items from api
   function getItems(){
     $.ajax({
-      url:'http://localhost/api/priorities'
+      url:'/api/priorities'
     }).done(function(priorities){
       let output = '<table class="table_source" style="background-color:white;border-collapse: initial;table-layout:auto"><tr>';
       output += '<td><strong>№</strong></td><td><strong>Название</strong></td><td><strong>Действие</strong></td></tr>';

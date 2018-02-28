@@ -15,7 +15,7 @@ $(document).ready(function(){
   function editItem(id, password, password_confirmation){//alert(id+' '+text+' '+body);
       $.ajax({
         method:'POST',
-        url:'http://localhost/api/usersextended/'+id,
+        url:'/api/usersextended/'+id,
         data: {func: 'changePassword', password: password, password_confirmation: password_confirmation, _method: 'PUT'}
       }).done(function(user){
         location.reload();

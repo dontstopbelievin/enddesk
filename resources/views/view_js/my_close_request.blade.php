@@ -6,7 +6,7 @@ $(document).ready(function(){
   //get req from api
   function getItem(){
     $.ajax({
-      url:'http://localhost/api/requests/'+{{$id}},
+      url:'/api/requests/'+{{$id}},
       //dataType: 'html',
     }).done(function(requests){
 
@@ -40,7 +40,7 @@ $(document).ready(function(){
   function updateItem(comment){
       $.ajax({
         method:'POST',
-        url:'http://localhost/api/requests/'+{{$id}},
+        url:'/api/requests/'+{{$id}},
         data: {status: '3', admin_id: {{Auth::id()}}, comment: comment, _method: 'PUT'}
       }).done(function(users){
         location.href="/home";
