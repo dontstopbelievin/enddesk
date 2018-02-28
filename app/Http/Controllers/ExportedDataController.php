@@ -67,11 +67,11 @@ class ExportedDataController extends Controller
         $my_priority = $q_priority->name;
       }
       if($select_status == 'all'){$my_status = 'все';}else{
-        $q_status = statuses::find($select_status)->name;
+        $q_status = statuses::find($select_status);
         $my_status = $q_status->name;
       }
       if($select_admin == 'all'){$my_admin = 'все';}else{
-        $q_admin = User::find($select_admin)->name;
+        $q_admin = User::find($select_admin);
         $my_admin = $q_admin->name;
       }
       $output[] = ['Фильтры использованные для экспорта данных'];
