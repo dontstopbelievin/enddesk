@@ -13,8 +13,7 @@
 
 Route::get('/', 'PagesController@guest_page');
 Route::get('/home', 'PagesController@getHome')->middleware('auth');
-Route::get('/settings', 'PagesController@getSettings')->middleware('auth');
-Route::get('/settings/{id}', 'PagesController@getSettings2')->middleware('auth');
+Route::get('/settings/{id}', 'PagesController@getSettings')->middleware('auth');
 Route::get('/setting/category', 'PagesController@getCategory')->middleware('admin');
 Route::get('/setting/priority', 'PagesController@getPriority')->middleware('admin');
 Route::get('/setting/status', 'PagesController@getStatus')->middleware('admin');
