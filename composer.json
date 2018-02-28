@@ -10,11 +10,7 @@
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4",
-<<<<<<< HEAD
-        "phpoffice/phpspreadsheet": "^1.1"
-=======
         "maatwebsite/excel": "^2.1"
->>>>>>> 3d3b0670317f15b3fbf591092d5951042158e962
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
