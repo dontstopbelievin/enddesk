@@ -135,7 +135,7 @@ class ExportedDataController extends Controller
            $sheet->setWidth('M', 20);
          });
       });
-
+	
       $myFile = $myFile->string('xlsx'); //change xlsx for the format you want, default is xls
       $response =  array(
          'name' => "exported_data", //no extention needed
