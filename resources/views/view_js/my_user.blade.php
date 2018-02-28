@@ -7,7 +7,7 @@ $(document).ready(function(){
   //get usertypes from api
   function getUserTypes(){
     $.ajax({
-      url:'http://localhost/api/usertypes'
+      url:'/api/usertypes'
     }).done(function(selectValues){
       $.each(selectValues, function(key, value) {
         if(value.id == '1'){return true;}
@@ -24,7 +24,7 @@ $(document).ready(function(){
     let id = $(this).data('id');
     $.ajax({
       method:'POST',
-      url:'http://localhost/api/users/'+id,
+      url:'/api/users/'+id,
       data: {_method: 'DELETE'}
     }).done(function(category){
       location.reload();
@@ -47,7 +47,7 @@ $(document).ready(function(){
   function editItem(id, name, usertype, password, password_confirmation){//alert(id+' '+text+' '+body);
       $.ajax({
         method:'POST',
-        url:'http://localhost/api/users/'+id,
+        url:'/api/users/'+id,
         data: {name: name, usertype: usertype, password: password, password_confirmation: password_confirmation, _method: 'PUT'}
       }).done(function(user){
         location.reload();
@@ -70,7 +70,7 @@ $(document).ready(function(){
   function addItem(name, email, usertype, password, password_confirmation){
       $.ajax({
         method:'POST',
-        url:'http://localhost/api/users',
+        url:'/api/users',
         data: {name: name, email: email, usertype: usertype, password: password, password_confirmation: password_confirmation}
       }).done(function(users){
         location.reload();
@@ -80,7 +80,7 @@ $(document).ready(function(){
   //get items from api
   function getItems(){
     $.ajax({
-      url:'http://localhost/api/users',
+      url:'/api/users',
       //dataType: 'html',
     }).done(function(users){//alert(users);
       let output = '<table class="table_source" style="background-color:white;border-collapse: initial;table-layout:auto"><tr>';

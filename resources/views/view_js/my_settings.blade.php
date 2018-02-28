@@ -15,7 +15,7 @@ $(document).ready(function(){
   function editItem(id, password, password_confirmation){//alert(id+' '+text+' '+body);
       $.ajax({
         method:'POST',
-        url:'http://localhost/api/usersextended/'+id,
+        url:'/api/usersextended/'+id,
         data: {func: 'changePassword', password: password, password_confirmation: password_confirmation, _method: 'PUT'}
       }).done(function(user){
         location.reload();
@@ -25,6 +25,7 @@ $(document).ready(function(){
   $(".menu_first").css("background-color", "#0066cc");
 
   $('body').on('click', '.menu_first', function(){
+    window.location.replace('1');
     $(".menu_second").css("background-color", "#0088cc");
     $(".menu_first").css("background-color", "#0066cc");
     var output = "";
@@ -58,7 +59,7 @@ $(document).ready(function(){
     $('.content').html(output);
   });
 
-  @if(!empty($menu))
+  @if(!empty($menu) && $menu == '2')
     $(".menu_first").css("background-color", "#0088cc");
     $(".menu_second").css("background-color", "#0066cc");
     var output = "";

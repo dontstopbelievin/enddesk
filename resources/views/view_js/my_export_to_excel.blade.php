@@ -25,7 +25,7 @@ $(document).ready(function(){
       $.ajax({
         cache: false,
         method:'POST',
-        url:'http://localhost/export_data',
+        url:'/export_data',
         data: {sortFrom: sortFrom, sortTo: sortTo, select_category: select_category,
           select_priority: select_priority, select_status: select_status, select_admin: select_admin},
         //dataType: 'html',
@@ -43,7 +43,7 @@ $(document).ready(function(){
   //get categories from api
   function getCategory(){
     $.ajax({
-      url:'http://localhost/api/categories'
+      url:'/api/categories'
     }).done(function(selectValues){
       $.each(selectValues, function(key, value) {
         $('#select_category').append($("<option></option>").attr("value",value.id).text(value.name));
@@ -54,7 +54,7 @@ $(document).ready(function(){
   //get priorities from api
   function getPriority(){
     $.ajax({
-      url:'http://localhost/api/priorities'
+      url:'/api/priorities'
     }).done(function(selectValues){
       $.each(selectValues, function(key, value) {
         $('#select_priority').append($("<option></option>").attr("value",value.id).text(value.name));
@@ -65,7 +65,7 @@ $(document).ready(function(){
   //get statuses from api
   function getStatuses(){
     $.ajax({
-      url:'http://localhost/api/statuses'
+      url:'/api/statuses'
     }).done(function(selectValues){
       $.each(selectValues, function(key, value) {
         $('#select_status').append($("<option></option>").attr("value",value.id).text(value.name));
@@ -76,7 +76,7 @@ $(document).ready(function(){
   //get admins from api
   function getAdmins(){
     $.ajax({
-      url:'http://localhost/api/users'
+      url:'/api/users'
     }).done(function(selectValues){
       $.each(selectValues, function(key, value) {
         $('#select_admin').append($("<option></option>").attr("value",value.id).text(value.name));

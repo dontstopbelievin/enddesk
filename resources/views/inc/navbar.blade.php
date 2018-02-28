@@ -38,7 +38,7 @@
 
 												<ul class="dropdown-menu dropdown-dmenu" role="menu">
 													<li><a href="/home">Запросы</a></li>
-													<li><a href="/settings">Настройки</a></li>
+													<li><a href="/settings/1">Настройки</a></li>
 														<li>
 																<a href="{{ route('logout') }}"
 																		onclick="event.preventDefault();

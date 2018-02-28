@@ -13,10 +13,7 @@ class PagesController extends Controller
     public function guest_page(){
       return view('guest_page');
     }
-    public function getSettings(){
-      return view('settings.settings')->with('user', Auth::user());
-    }
-    public function getSettings2($id){
+    public function getSettings($id){
       return view('settings.settings')->with(['user' => Auth::user(), 'menu' => $id]);
     }
     public function getCategory(){

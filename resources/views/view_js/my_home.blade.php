@@ -8,7 +8,7 @@ $(document).ready(function(){
     setInitial();
     function setInitial(){
       $.ajax({
-        url:'http://localhost/api/users/'+{{Auth::id()}},
+        url:'/api/users/'+{{Auth::id()}},
         success: function(requests){
           timelapse = requests.timelapse;
           $('#select_amount').val(requests.per_page);
@@ -28,7 +28,7 @@ $(document).ready(function(){
   function getRequests(page, sorting){
     $.ajax({
       method: 'POST',
-      url:'http://localhost/api/requests',
+      url:'/api/requests',
       //dataType : 'html',
       data: {page: page, sorting: sorting, ordering: ordering, _method: 'GET'},
       success: function(requests){
@@ -241,7 +241,7 @@ $(document).ready(function(){
   function editStatus(rid, status){
       $.ajax({
         method:'POST',
-        url:'http://localhost/api/requests/'+rid,
+        url:'/api/requests/'+rid,
         data: {status: status, admin_id: {{Auth::id()}}, _method: 'PUT'}
       }).done(function(user){
         if(timer){clearTimeout(timer); timer = null;}
@@ -264,7 +264,7 @@ $(document).ready(function(){
   function editShowtag(showtag){
       $.ajax({
         method:'POST',
-        url:'http://localhost/api/usersextended/'+{{Auth::id()}},
+        url:'/api/usersextended/'+{{Auth::id()}},
         data: {func: 'showtag', showtag: showtag, _method: 'PUT'}
       }).done(function(user){
         if(timer){clearTimeout(timer); timer = null;}
@@ -287,7 +287,7 @@ $(document).ready(function(){
   function editPer_page(per_page){
       $.ajax({
         method:'POST',
-        url:'http://localhost/api/usersextended/'+{{Auth::id()}},
+        url:'/api/usersextended/'+{{Auth::id()}},
         data: {func: 'per_page', per_page: per_page, _method: 'PUT'}
       }).done(function(user){
         if(timer){clearTimeout(timer); timer = null;}
@@ -305,7 +305,7 @@ $(document).ready(function(){
   function editTimelapse(timelapse_t){
       $.ajax({
         method:'POST',
-        url:'http://localhost/api/usersextended/'+{{Auth::id()}},
+        url:'/api/usersextended/'+{{Auth::id()}},
         data: {func: 'timelapse', timelapse: timelapse_t, _method: 'PUT'}
       }).done(function(user){
         if(timer){clearTimeout(timer); timer = null;}

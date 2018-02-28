@@ -13,16 +13,20 @@
 
 Route::get('/', 'PagesController@guest_page');
 Route::get('/home', 'PagesController@getHome')->middleware('auth');
-Route::get('/settings', 'PagesController@getSettings')->middleware('auth');
-Route::get('/settings/{id}', 'PagesController@getSettings2')->middleware('auth');
-Route::get('/setting/category', 'PagesController@getCategory')->middleware('admin');
-Route::get('/setting/priority', 'PagesController@getPriority')->middleware('admin');
-Route::get('/setting/status', 'PagesController@getStatus')->middleware('admin');
-Route::get('/setting/user', 'PagesController@getUser')->middleware('admin');
+Route::get('/settings/{id}', 'PagesController@getSettings')->middleware('auth');
+Route::get('/setting/category', 'PagesController@getCategory')->middleware('auth');//admin
+Route::get('/setting/priority', 'PagesController@getPriority')->middleware('auth');//admin
+Route::get('/setting/status', 'PagesController@getStatus')->middleware('auth');//admin
+Route::get('/setting/user', 'PagesController@getUser')->middleware('auth');//admin
 Route::get('/export_to_excel', 'PagesController@exportToExcel')->middleware('auth');
 Route::get('/close_request/{id}', 'PagesController@closeReq')->middleware('auth');
 Route::get('/print_request/{id}', 'PagesController@printReq')->middleware('auth');
 Route::post('/export_data', 'ExportedDataController@store')->middleware('auth');
+
+//Route::resource('api/usersextended', 'ApiUsersExtendedController');
+//Route::resource('api/users', 'ApiUsersController');
+//Route::resource('api/usertypes', 'UserTypesController');
+//Route::resource('api/statuses', 'StatusesController');
 
 Route::group(['middleware' => 'auth'], function() {
   Route::resource('api/statuses', 'StatusesController');

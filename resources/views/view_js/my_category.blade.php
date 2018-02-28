@@ -1,6 +1,5 @@
 <script type="text/javascript">
 $(document).ready(function(){
-
   getItems();
 
   //add event
@@ -15,7 +14,7 @@ $(document).ready(function(){
   function addItem(name){
       $.ajax({
         method:'POST',
-        url:'http://localhost/api/categories',
+        url:'/api/categories',
         data: {name: name}
       }).done(function(category){
         location.reload();
@@ -29,7 +28,7 @@ $(document).ready(function(){
     let id = $(this).data('id');
     $.ajax({
       method:'POST',
-      url:'http://localhost/api/categories/'+id,
+      url:'/api/categories/'+id,
       data: {_method: 'DELETE'}
     }).done(function(category){
       location.reload();
@@ -50,7 +49,7 @@ $(document).ready(function(){
   function editItem(name, id){//alert(id+' '+text+' '+body);
       $.ajax({
         method:'POST',
-        url:'http://localhost/api/categories/'+id,
+        url:'/api/categories/'+id,
         data: {name: name, _method: 'PUT'}
       }).done(function(category){
         location.reload();
@@ -60,7 +59,7 @@ $(document).ready(function(){
   //get items from api
   function getItems(){
     $.ajax({
-      url:'http://localhost/api/categories'
+      url:'/api/categories'
     }).done(function(categories){
         let output = '<table class="table_source" style="background-color:white;border-collapse: initial;table-layout:auto"><tr>';
         output += '<td><strong>№</strong></td><td><strong>Название</strong></td><td><strong>Действие</strong></td></tr>';
