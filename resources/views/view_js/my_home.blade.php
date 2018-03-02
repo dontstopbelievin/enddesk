@@ -133,7 +133,7 @@ $(document).ready(function(){
               iterator++;
           });
         }else{
-          output += '<tr><td colspan=6><strong>Список пуст.</strong></td></tr>';
+          output += '<tr><td colspan=8><strong>Список пуст.</strong></td></tr>';
         }
 
         output += '</table>';
