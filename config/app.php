@@ -179,6 +179,7 @@ return [
         App\Providers\FormServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Matriphe\Supervisor\ServiceProvider::class,
 
     ],
 
